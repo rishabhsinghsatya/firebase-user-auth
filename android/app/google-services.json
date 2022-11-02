@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090099863696",
+    "project_id": "user-auth-cf6b9",
+    "storage_bucket": "user-auth-cf6b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090099863696:android:3669c0f3b29c1a7649f815",
+        "android_client_info": {
+          "package_name": "com.example.user_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090099863696-3h23q45ma4dkg8idpjk21v5buutdch9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtM7XNAZQP7LMM6L7Gw-mzwNUoMQgVdR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090099863696-3h23q45ma4dkg8idpjk21v5buutdch9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
