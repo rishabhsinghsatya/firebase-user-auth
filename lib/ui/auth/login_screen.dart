@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:user_auth/ui/auth/google_auth.dart';
 import 'package:user_auth/ui/auth/login_with_phone.dart';
 import 'package:user_auth/ui/auth/signup_screen.dart';
 import 'package:user_auth/ui/post/post_screen.dart';
@@ -67,10 +69,10 @@ class _LoginScreenState extends State<LoginScreen> {
           title: Text('Login'),
         ),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          padding: EdgeInsets.fromLTRB(20, 80, 20, 20),
+          child: ListView(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Form(
                   key: _formKey,
@@ -149,10 +151,32 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      border: Border.all(color: Colors.deepPurple)),
+                      border: Border.all(color: Colors.black, width: 2)),
                   child: Center(child: Text("Login with phone")),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 50,
+                child: Align(
+                  child: Text("OR"),
+                  alignment: Alignment.center,
+                ),
+              ),
+              GestureDetector(
+                onTap: () async {
+                  await utils().googleLogin().whenComplete(() {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => PostScreen()));
+                  });
+                },
+                child: Container(
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      border: Border.all(color: Colors.blue, width: 5)),
+                  child: Center(child: Text("Sign in with google")),
+                ),
+              ),
             ],
           ),
         ),
