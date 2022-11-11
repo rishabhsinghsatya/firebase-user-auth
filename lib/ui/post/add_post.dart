@@ -28,7 +28,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: 50,
+              height: 30,
             ),
             TextFormField(
               controller: postController,
