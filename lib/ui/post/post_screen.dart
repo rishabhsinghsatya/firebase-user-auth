@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:user_auth/ui/auth/login_screen.dart';
+import 'package:user_auth/ui/post/add_post.dart';
 import 'package:user_auth/utils/utils.dart';
 
 class PostScreen extends StatefulWidget {
@@ -36,6 +37,13 @@ class _PostScreenState extends State<PostScreen> {
             width: 10,
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AddPostScreen()));
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
